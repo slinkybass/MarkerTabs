@@ -1,0 +1,38 @@
+<section class="account" style="min-height:100vh">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-md-offset-4">
+                <div class="account-wall">
+                    <div class="logo"></div>
+
+                    <form ng-submit="loginCtrl.login()" role="form">
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon border-radius-0"><i class="fa fa-user"></i></span>
+                                <input type="text" ng-model="loginCtrl.username" class="form-control border-radius-0" placeholder="Username" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon border-radius-0"><i class="fa fa-lock"></i></span>
+                                <input type="password" ng-model="loginCtrl.pass" class="form-control border-radius-0" placeholder="Password" required>
+                            </div>
+                        </div>
+
+                        <button type="submit" ng-disabled="isLoggingin" class="btn btn-danger btn-square btn-block">
+                            <span ng-show="isLoggingin">
+                                <i class="fa fa-circle-o-notch fa-spin"></i>
+                            </span>
+                            Sign In
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

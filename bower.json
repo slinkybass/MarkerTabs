@@ -1,0 +1,28 @@
+{
+  "name": "markertabs",
+  "authors": [
+    "Slinkybass <isra792@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/assets/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.11",
+    "angular-bootstrap": "^2.5.0",
+    "bootstrap": "^3.3.7",
+    "bootstrap-extra": "^0.0.4",
+    "font-awesome": "^4.7.0",
+    "angular-ui-router": "^1.0.3",
+    "satellizer": "^0.15.5",
+	"angular-pageslide-directive": "^2.1.4"
+  }
+}

@@ -1,0 +1,37 @@
+<div class="row">
+    <uib-tabset class="tabset container">
+        <uib-tab ng-hide="homeCtrl.hideContent(tab.hidden)" ng-repeat="tab in mainCtrl.loggeduser.tabs | orderBy:'order'">
+            <uib-tab-heading>
+                <span ng-bind="tab.name"></span>
+            </uib-tab-heading>
+            <div ng-hide="homeCtrl.hideContent(link.hidden)" ng-repeat="link in tab.links | orderBy:'order'">
+                <a ng-href="{{link.url}}">
+                    <div class="link col-md-{{12/tab.cols}}">
+                        <img class="img-responsive" style="background-image:url('{{link.image}}'); background-color:{{link.bgcolor}}">
+                        <h4 class="text-center show" ng-bind="link.name"></h4>
+                    </div>
+                </a>
+            </div>
+        </uib-tab>
+    </uib-tabset>
+</div>
+
+<a class="pageslide-menu-selector" ng-click="homeCtrl.openedMenu = !homeCtrl.openedMenu">
+    <i class="fa fa-bars"></i>
+</a>
+<pageslide ps-class="pageslide-menu" ps-body-class="pageslide-body" ps-push="true" ps-size="250px" ps-side="right" ps-open="homeCtrl.openedMenu">
+    <div class="pageslide-footer clearfix">
+        <a class="pull-left" ng-click="homeCtrl.toggleHidden()" uib-tooltip="{{homeCtrl.showedHidden ? 'Hide' : 'Show'}} tabs and links" tooltip-placement="bottom">
+            <i class="fa" ng-class="homeCtrl.showedHidden ? 'fa-eye-slash' : 'fa-eye'"></i>
+        </a>
+        <a class="pull-left" ng-click="homeCtrl.options()" uib-tooltip="Config your Markertabs" tooltip-placement="bottom">
+            <i class="fa fa-gears"></i>
+        </a>
+        <a class="pull-left" ng-click="homeCtrl.toggleFullscreen()" uib-tooltip="Enter/Exit fullscreen mode" tooltip-placement="bottom">
+            <i class="fa fa-arrows-alt"></i>
+        </a>
+        <a class="pull-left" ng-click="homeCtrl.logout()" uib-tooltip="Logout" tooltip-placement="bottom">
+            <i class="fa fa-power-off"></i>
+        </a>
+    </div>
+</pageslide>
