@@ -8,7 +8,9 @@ markertabs.controller('MainController', ['$state', '$auth', 'markertabsAPI',
                 vm.loggeduser = data.data;
                 $state.go('home');
             }).catch(function (data) {
-                alert('ERROR');
+                $auth.logout().then(function () {
+					$state.go('login');
+				});
             });
         }
     }
