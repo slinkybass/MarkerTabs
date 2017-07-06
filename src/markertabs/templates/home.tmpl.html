@@ -1,10 +1,10 @@
 <div class="row">
     <uib-tabset class="tabset container">
-        <uib-tab ng-hide="homeCtrl.hideContent(tab.hidden)" ng-repeat="tab in mainCtrl.loggeduser.tabs | orderBy:'order'">
+        <uib-tab ng-hide="homeCtrl.isHidden(tab.hidden)" ng-repeat="tab in mainCtrl.loggeduser.tabs | orderBy:'position'">
             <uib-tab-heading>
                 <span ng-bind="tab.name"></span>
             </uib-tab-heading>
-            <div ng-hide="homeCtrl.hideContent(link.hidden)" ng-repeat="link in tab.links | orderBy:'order'">
+            <div ng-hide="homeCtrl.isHidden(link.hidden)" ng-repeat="link in tab.links | orderBy:'position'">
                 <a ng-href="{{link.url}}">
                     <div class="link col-md-{{12/tab.cols}}">
                         <img class="img-responsive" style="background-image:url('{{link.image}}'); background-color:{{link.bgcolor}}">

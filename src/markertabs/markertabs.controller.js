@@ -33,8 +33,8 @@ markertabs.controller('HomeController', ['$state', '$auth',
         var vm = this;
         vm.openedMenu = false;
         vm.showedHidden = false;
-        vm.hideContent = function (contentHidden) {
-            return vm.showedHidden ? false : (contentHidden ? true : false);
+        vm.isHidden = function (isHidden) {
+            return vm.showedHidden ? false : (isHidden ? true : false);
         };
         vm.toggleHidden = function () {
             vm.showedHidden = !vm.showedHidden;
