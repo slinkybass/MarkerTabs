@@ -1,5 +1,5 @@
-markertabs.controller('MainController', ['$state', '$auth', 'markertabsAPI',
-    function ($state, $auth, markertabsAPI) {
+markertabs.controller('MainController', ['$state', '$auth', 'markertabsAPI', 'SweetAlert',
+    function ($state, $auth, markertabsAPI, SweetAlert) {
         var vm = this;
         if (!$auth.getPayload()) {
             $state.go('login');
@@ -8,15 +8,13 @@ markertabs.controller('MainController', ['$state', '$auth', 'markertabsAPI',
                 vm.loggeduser = data.data;
                 $state.go('home');
             }).catch(function (data) {
-                $auth.logout().then(function () {
-					$state.go('login');
-				});
+				SweetAlert.swal("Error!", data.data.msg, "error");
             });
         }
     }
 ]);
-markertabs.controller('LoginController', ['$state', '$auth',
-    function ($state, $auth) {
+markertabs.controller('LoginController', ['$state', '$auth', 'SweetAlert',
+    function ($state, $auth, SweetAlert) {
         var vm = this;
         vm.login = function () {
             $auth.login({
@@ -25,7 +23,7 @@ markertabs.controller('LoginController', ['$state', '$auth',
             }).then(function () {
                 $state.go('home');
             }).catch(function (data) {
-                alert('ERROR');
+				SweetAlert.swal("Error!", data.data.msg, "error");
             });
         };
     }

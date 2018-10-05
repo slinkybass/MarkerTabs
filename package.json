@@ -3,6 +3,7 @@
     "angular": "^1.7.5",
     "angular-bootstrap": "^0.12.2",
     "angular-pageslide-directive": "^2.2.0",
+    "angular-sweetalert": "^1.1.2",
     "angular-ui-router": "^1.0.20",
     "bootstrap": "3.*",
     "bootstrap-extra": "https://github.com/slinkybass/bootstrap-extra",
