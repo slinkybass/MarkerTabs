@@ -19,7 +19,7 @@ To get started, check out the Documentation
 * Modify the route to your API backend:
 
 ```js
-# src/markertabs/markertabs.js
+# src/markertabs.js
 markertabs.constant('urlBackend', "http://localhost/MarkerTabsBackend");
 ```
 

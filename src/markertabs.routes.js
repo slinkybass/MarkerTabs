@@ -5,7 +5,7 @@ markertabs.config(function ($stateProvider, $urlRouterProvider) {
             url: "",
             views: {
                 '@': {
-                    templateUrl: "src/markertabs/templates/main.tmpl.html",
+                    templateUrl: "src/templates/main.tmpl.html",
                     controller: 'MainController',
                     controllerAs: 'mainCtrl'
                 }
@@ -15,7 +15,7 @@ markertabs.config(function ($stateProvider, $urlRouterProvider) {
             url: "/login",
             views: {
                 '@': {
-                    templateUrl: "src/markertabs/templates/login.tmpl.html",
+                    templateUrl: "src/templates/login.tmpl.html",
                     controller: 'LoginController',
                     controllerAs: 'loginCtrl'
                 }
@@ -26,7 +26,7 @@ markertabs.config(function ($stateProvider, $urlRouterProvider) {
             url: "/home",
             views: {
                 'content@index': {
-                    templateUrl: "src/markertabs/templates/home.tmpl.html",
+                    templateUrl: "src/templates/home.tmpl.html",
                     controller: 'HomeController',
                     controllerAs: 'homeCtrl'
                 }

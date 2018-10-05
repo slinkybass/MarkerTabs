@@ -8,7 +8,7 @@ markertabs.controller('MainController', ['$state', '$auth', 'markertabsAPI', 'Sw
                 vm.loggeduser = data.data;
                 $state.go('home');
             }).catch(function (data) {
-				SweetAlert.swal("Error!", data.data.msg, "error");
+                SweetAlert.swal("Error!", data.data.msg, "error");
             });
         }
     }
@@ -23,7 +23,7 @@ markertabs.controller('LoginController', ['$state', '$auth', 'SweetAlert',
             }).then(function () {
                 $state.go('home');
             }).catch(function (data) {
-				SweetAlert.swal("Error!", data.data.msg, "error");
+                SweetAlert.swal("Error!", data.data.msg, "error");
             });
         };
     }
@@ -41,12 +41,12 @@ markertabs.controller('HomeController', ['$state', '$auth', 'ngDialog',
             vm.openedMenu = false;
         };
         vm.options = function () {
-			ngDialog.open({
-				template: 'src/markertabs/templates/options.tmpl.html',
-				className: 'ngdialog-theme-default ngdialog-xl',
-				controller: 'OptionsController',
-				controllerAs: 'optionsCtrl'
-			});
+            ngDialog.open({
+                template: 'src/templates/options.tmpl.html',
+                className: 'ngdialog-theme-default ngdialog-xl',
+                controller: 'OptionsController',
+                controllerAs: 'optionsCtrl'
+            });
             vm.openedMenu = false;
         };
         vm.toggleFullscreen = function () {
@@ -85,6 +85,6 @@ markertabs.controller('HomeController', ['$state', '$auth', 'ngDialog',
 markertabs.controller('OptionsController', ['$state', '$auth',
     function ($state, $auth) {
         var vm = this;
-		
+
     }
 ]);
