@@ -1,5 +1,5 @@
 markertabs.controller('MainController', ['$state', '$auth', 'markertabsAPI', 'getErrorAPI', 'SweetAlert',
-    function ($state, $auth, getErrorAPI, markertabsAPI, SweetAlert) {
+    function ($state, $auth, markertabsAPI, getErrorAPI, SweetAlert) {
         var vm = this;
         if (!$auth.getPayload()) {
             $state.go('login');
