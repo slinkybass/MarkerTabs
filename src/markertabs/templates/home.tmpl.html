@@ -1,5 +1,6 @@
 <div class="row">
     <uib-tabset class="tabset container">
+	
         <uib-tab ng-hide="homeCtrl.isHidden(tab.hidden)" ng-repeat="tab in mainCtrl.loggeduser.tabs | orderBy:'position'">
             <uib-tab-heading>
                 <span ng-bind="tab.name"></span>
@@ -13,6 +14,10 @@
                 </a>
             </div>
         </uib-tab>
+	
+		<div class="container" ng-show="(mainCtrl.loggeduser.tabs).length == 0">
+			<h2 class="text-center">There are no tabs around here!</h2>
+		</div>
     </uib-tabset>
 </div>
 

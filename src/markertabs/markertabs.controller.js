@@ -28,8 +28,8 @@ markertabs.controller('LoginController', ['$state', '$auth', 'SweetAlert',
         };
     }
 ]);
-markertabs.controller('HomeController', ['$state', '$auth',
-    function ($state, $auth) {
+markertabs.controller('HomeController', ['$state', '$auth', 'ngDialog',
+    function ($state, $auth, ngDialog) {
         var vm = this;
         vm.openedMenu = false;
         vm.showedHidden = false;
@@ -41,6 +41,12 @@ markertabs.controller('HomeController', ['$state', '$auth',
             vm.openedMenu = false;
         };
         vm.options = function () {
+			ngDialog.open({
+				template: 'src/markertabs/templates/options.tmpl.html',
+				className: 'ngdialog-theme-default ngdialog-xl',
+				controller: 'OptionsController',
+				controllerAs: 'optionsCtrl'
+			});
             vm.openedMenu = false;
         };
         vm.toggleFullscreen = function () {
@@ -74,5 +80,11 @@ markertabs.controller('HomeController', ['$state', '$auth',
                 $state.go('login');
             });
         };
+    }
+]);
+markertabs.controller('OptionsController', ['$state', '$auth',
+    function ($state, $auth) {
+        var vm = this;
+		
     }
 ]);

@@ -1,4 +1,11 @@
-var markertabs = angular.module('markertabs', ['ui.router', 'satellizer', 'ui.bootstrap', 'pageslide-directive', 'oitozero.ngSweetAlert']);
+var markertabs = angular.module('markertabs', [
+'ui.router',
+'satellizer',
+'ui.bootstrap',
+'pageslide-directive',
+'oitozero.ngSweetAlert',
+'ngDialog'
+]);
 
 markertabs.constant('urlBackend', "http://projects.localhost.com/MarkertabsAPI/web/app_dev.php");
 
