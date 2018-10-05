@@ -1,14 +1,16 @@
 markertabs.factory('markertabsAPI', ['$q', '$http', 'urlBackend',
-    function ($q, $http, urlBackend, ) {
+    function ($q, $http, urlBackend) {
 
         markertabsAPI = {};
 
         /** ====================== API CALLING ===================== **/
-        markertabsAPI.api = function (endpoint, data, method) {
+        markertabsAPI.api = function (endpoint, postdata, getdata, method) {
+            getdata = getdata ? getdata : {};
             var defered = $q.defer();
             $http({
                 url: urlBackend + endpoint,
-                data: data,
+                data: postdata,
+                params: getdata,
                 method: method ? method : 'GET',
                 withCredentials: true
             }).then(function successCallback(response) {
@@ -24,7 +26,7 @@ markertabs.factory('markertabsAPI', ['$q', '$http', 'urlBackend',
         };
 
         markertabsAPI.getUser = function (id) {
-            return markertabsAPI.api('/users/' + id);
+            return markertabsAPI.api('/user/get/' + id);
         };
 
         return markertabsAPI;

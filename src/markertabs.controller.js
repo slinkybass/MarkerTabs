@@ -1,5 +1,5 @@
-markertabs.controller('MainController', ['$state', '$auth', 'markertabsAPI', 'SweetAlert',
-    function ($state, $auth, markertabsAPI, SweetAlert) {
+markertabs.controller('MainController', ['$state', '$auth', 'markertabsAPI', 'getErrorAPI', 'SweetAlert',
+    function ($state, $auth, getErrorAPI, markertabsAPI, SweetAlert) {
         var vm = this;
         if (!$auth.getPayload()) {
             $state.go('login');
@@ -8,13 +8,13 @@ markertabs.controller('MainController', ['$state', '$auth', 'markertabsAPI', 'Sw
                 vm.loggeduser = data.data;
                 $state.go('home');
             }).catch(function (data) {
-                SweetAlert.swal("Error!", data.data.msg, "error");
+                SweetAlert.swal("Error!", getErrorAPI(data), "error");
             });
         }
     }
 ]);
-markertabs.controller('LoginController', ['$state', '$auth', 'SweetAlert',
-    function ($state, $auth, SweetAlert) {
+markertabs.controller('LoginController', ['$state', '$auth', 'getErrorAPI', 'SweetAlert',
+    function ($state, $auth, getErrorAPI, SweetAlert) {
         var vm = this;
         vm.login = function () {
             $auth.login({
@@ -23,7 +23,7 @@ markertabs.controller('LoginController', ['$state', '$auth', 'SweetAlert',
             }).then(function () {
                 $state.go('home');
             }).catch(function (data) {
-                SweetAlert.swal("Error!", data.data.msg, "error");
+                SweetAlert.swal("Error!", getErrorAPI(data), "error");
             });
         };
     }
