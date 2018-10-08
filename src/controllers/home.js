@@ -15,7 +15,7 @@ angular.module('app')
                     vm.showedConfig = false;
 
                     vm.isHidden = function (isHidden) {
-                        return vm.showedHidden ? false : (isHidden ? true : false);
+                        return vm.showedConfig ? false : (vm.showedHidden ? false : (isHidden ? true : false));
                     };
 
                     vm.toggleHidden = function () {
