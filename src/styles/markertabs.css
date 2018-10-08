@@ -94,6 +94,7 @@ section.home {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    min-height: 21px;
 }
 /*MENU*/
 .pageslide-menu-body-open::before {
