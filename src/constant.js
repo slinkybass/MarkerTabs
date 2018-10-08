@@ -1,7 +1,7 @@
 'use strict';
 angular.module('app')
     .constant('urlBackend',
-        "http://markertabsapi.localhost.com/app_dev.php"
+        "http://markertabsapi.garaballu.com"
     )
     .constant('MODULES', [
     {
