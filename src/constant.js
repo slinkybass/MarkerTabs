@@ -12,11 +12,10 @@ angular.module('app')
     }, {
         name: 'home',
         files: [
-            'src/controllers/home.js'
-        ]
-    }, {
-        name: 'options',
-        files: [
-            'src/controllers/options.js'
+            'src/controllers/home.js',
+            'src/controllers/addLink.js',
+            'src/controllers/addTab.js',
+            'src/controllers/editLink.js',
+            'src/controllers/editTab.js'
         ]
     }]);

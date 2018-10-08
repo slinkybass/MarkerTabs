@@ -1,8 +1,9 @@
 <section class="home">
     <div class="container">
         <div class="row">
-            <uib-tabset class="tabset container">
-                <uib-tab ng-hide="homeCtrl.isHidden(tab.hidden)" ng-repeat="tab in homeCtrl.loggeduser.tabs | orderBy:'position'">
+            <uib-tabset active="1" class="tabset container">
+
+                <uib-tab index="$index + 1" ng-hide="homeCtrl.isHidden(tab.hidden)" ng-repeat="tab in homeCtrl.loggeduser.tabs | orderBy:'position'">
                     <uib-tab-heading>
                         <span ng-bind="tab.name"></span>
                     </uib-tab-heading>
@@ -14,6 +15,20 @@
                             </div>
                         </a>
                     </div>
+
+                    <div ng-show="homeCtrl.showedConfig">
+                        <a ng-click="homeCtrl.options_addLink()">
+                            <div class="link col-md-{{12/tab.cols}}">
+                                <img class="img-responsive" style="background-image:url('src/styles/add.png');">
+                            </div>
+                        </a>
+                    </div>
+                </uib-tab>
+
+                <uib-tab ng-show="homeCtrl.showedConfig" ng-click="homeCtrl.options_addTab()" disable="true" disablecontent="true">
+                    <uib-tab-heading>
+                        <span>+</span>
+                    </uib-tab-heading>
                 </uib-tab>
 
         		<div class="container" ng-show="(homeCtrl.loggeduser.tabs).length == 0">
@@ -33,7 +48,7 @@
         <a class="pull-left" ng-click="homeCtrl.toggleHidden()" uib-tooltip="{{homeCtrl.showedHidden ? 'Hide' : 'Show'}} tabs and links" tooltip-placement="bottom">
             <i class="fa" ng-class="homeCtrl.showedHidden ? 'fa-eye-slash' : 'fa-eye'"></i>
         </a>
-        <a class="pull-left" ng-click="homeCtrl.options()" uib-tooltip="Config your Markertabs" tooltip-placement="bottom">
+        <a class="pull-left" ng-click="homeCtrl.toggleOptions()" uib-tooltip="Enter/Exit config your Markertabs" tooltip-placement="bottom">
             <i class="fa fa-gears"></i>
         </a>
         <a class="pull-left" ng-click="homeCtrl.toggleFullscreen()" uib-tooltip="Enter/Exit fullscreen mode" tooltip-placement="bottom">

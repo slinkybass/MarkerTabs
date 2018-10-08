@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-    .controller('OptionsController', ['$state', '$auth',
+    .controller('AddTabController', ['$state', '$auth',
         function ($state, $auth) {
             var vm = this;
 

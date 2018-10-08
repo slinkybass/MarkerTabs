@@ -52,6 +52,10 @@ section.home {
     background-color: #FFFFFF !important;
     color: rgba(0, 0, 0, 0.75) !important;
 }
+.tabset .nav.nav-tabs > li.disabled[disablecontent="true"] > a:focus,
+.tabset .nav.nav-tabs > li.disabled[disablecontent="true"] > a:hover {
+    cursor: pointer;
+}
 .tabset .tab-content {
     float: left;
     width: 100%;
@@ -62,6 +66,9 @@ section.home {
 .tabset .tab-content .tab-pane {
     float: left;
     width: 100%;
+}
+.tabset .tab-content .tab-pane a {
+    cursor: pointer;
 }
 .tabset .tab-content .tab-pane .link {
     padding: 15px;

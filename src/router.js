@@ -25,7 +25,7 @@ angular.module('app')
                     controller: 'HomeController',
                     controllerAs: 'homeCtrl',
                     resolve: {
-                        load: load(['home', 'options'])
+                        load: load(['home'])
                     }
                 });
 

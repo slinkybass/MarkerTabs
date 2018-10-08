@@ -12,21 +12,51 @@ angular.module('app')
 
                     vm.openedMenu = false;
                     vm.showedHidden = false;
+                    vm.showedConfig = false;
+
                     vm.isHidden = function (isHidden) {
                         return vm.showedHidden ? false : (isHidden ? true : false);
                     };
+
                     vm.toggleHidden = function () {
                         vm.showedHidden = !vm.showedHidden;
                         vm.openedMenu = false;
                     };
-                    vm.options = function () {
-                        ngDialog.open({
-                            template: 'src/templates/options.tmpl.html',
-                            className: 'ngdialog-theme-default ngdialog-xl',
-                            controller: 'OptionsController',
-                            controllerAs: 'optionsCtrl'
-                        });
+                    vm.toggleOptions = function () {
+                        vm.showedConfig = !vm.showedConfig;
                         vm.openedMenu = false;
+                    };
+                    vm.options_addLink = function () {
+                        ngDialog.open({
+                            template: 'src/templates/addLink.tmpl.html',
+                            className: 'ngdialog-theme-default ngdialog-xl',
+                            controller: 'AddLinkController',
+                            controllerAs: 'addLinkCtrl'
+                        });
+                    };
+                    vm.options_addTab = function () {
+                        ngDialog.open({
+                            template: 'src/templates/addTab.tmpl.html',
+                            className: 'ngdialog-theme-default ngdialog-xl',
+                            controller: 'AddTabController',
+                            controllerAs: 'addTabCtrl'
+                        });
+                    };
+                    vm.options_editLink = function () {
+                        ngDialog.open({
+                            template: 'src/templates/editLink.tmpl.html',
+                            className: 'ngdialog-theme-default ngdialog-xl',
+                            controller: 'EditLinkController',
+                            controllerAs: 'editLinkCtrl'
+                        });
+                    };
+                    vm.options_editTab = function () {
+                        ngDialog.open({
+                            template: 'src/templates/editTab.tmpl.html',
+                            className: 'ngdialog-theme-default ngdialog-xl',
+                            controller: 'EditTabController',
+                            controllerAs: 'editTabCtrl'
+                        });
                     };
                     vm.toggleFullscreen = function () {
                         if (!document.fullscreenElement && // alternative standard method
