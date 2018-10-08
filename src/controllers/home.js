@@ -42,20 +42,30 @@ angular.module('app')
                             controllerAs: 'addTabCtrl'
                         });
                     };
-                    vm.options_editLink = function () {
+                    vm.options_editLink = function (link) {
                         ngDialog.open({
                             template: 'src/templates/editLink.tmpl.html',
                             className: 'ngdialog-theme-default ngdialog-xl',
                             controller: 'EditLinkController',
-                            controllerAs: 'editLinkCtrl'
+                            controllerAs: 'editLinkCtrl',
+                            resolve: {
+                                link: function () {
+                                    return link;
+                                }
+                            }
                         });
                     };
-                    vm.options_editTab = function () {
+                    vm.options_editTab = function (tab) {
                         ngDialog.open({
                             template: 'src/templates/editTab.tmpl.html',
                             className: 'ngdialog-theme-default ngdialog-xl',
                             controller: 'EditTabController',
-                            controllerAs: 'editTabCtrl'
+                            controllerAs: 'editTabCtrl',
+                            resolve: {
+                                tab: function () {
+                                    return tab;
+                                }
+                            }
                         });
                     };
                     vm.toggleFullscreen = function () {

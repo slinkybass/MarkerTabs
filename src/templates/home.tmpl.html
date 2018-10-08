@@ -6,11 +6,17 @@
                 <uib-tab index="$index + 1" ng-hide="homeCtrl.isHidden(tab.hidden)" ng-repeat="tab in homeCtrl.loggeduser.tabs | orderBy:'position'">
                     <uib-tab-heading>
                         <span ng-bind="tab.name"></span>
+                        <a class="config" ng-click="homeCtrl.options_editTab(tab)" ng-show="homeCtrl.showedConfig">
+                            <i class="fa fa-gears"></i>
+                        </a>
                     </uib-tab-heading>
                     <div ng-hide="homeCtrl.isHidden(link.hidden)" ng-repeat="link in tab.links | orderBy:'position'">
                         <a ng-href="{{link.url}}">
                             <div class="link col-md-{{12/tab.cols}}">
                                 <img class="img-responsive" style="background-image:url('{{link.image}}'); background-color:{{link.bgcolor}}">
+                                <a class="config" ng-click="homeCtrl.options_editLink(link)" ng-show="homeCtrl.showedConfig">
+                                    <i class="fa fa-gears"></i>
+                                </a>
                                 <h4 class="text-center show" ng-bind="link.name"></h4>
                             </div>
                         </a>

@@ -33,28 +33,42 @@ section.home {
 .tabset {
     padding: 50px;
 }
-.tabset .nav.nav-tabs li a {
+.tabset .nav.nav-tabs li.nav-item a.nav-link {
     padding: 15px 30px;
-    color: rgba(255, 255, 255, 0.30);
-    border-radius: 0;
     border: 0 !important;
     max-width: 250px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.tabset .nav.nav-tabs li:focus a,
-.tabset .nav.nav-tabs li:hover a {
-    background-color: rgba(0, 0, 0, 0.20);
-    color: rgba(255, 255, 255, 0.20);
+.tabset .nav.nav-tabs li.nav-item:not(.active) a.nav-link {
+    color: rgb(255, 255, 255, 0.5);
 }
-.tabset .nav.nav-tabs li.active a {
-    background-color: #FFFFFF !important;
-    color: rgba(0, 0, 0, 0.75) !important;
+.tabset .nav.nav-tabs li.nav-item:not(.active):focus a.nav-link,
+.tabset .nav.nav-tabs li.nav-item:not(.active):hover a.nav-link {
+    color: rgb(0, 0, 0, 0.5);
 }
-.tabset .nav.nav-tabs > li.disabled[disablecontent="true"] > a:focus,
-.tabset .nav.nav-tabs > li.disabled[disablecontent="true"] > a:hover {
+.tabset .nav.nav-tabs li.nav-item.disabled[disablecontent="true"] > a.nav-link:focus,
+.tabset .nav.nav-tabs li.nav-item.disabled[disablecontent="true"] > a.nav-link:hover {
     cursor: pointer;
+}
+.tabset .nav.nav-tabs li.nav-item a.nav-link a.config {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+.tabset .nav.nav-tabs li.nav-item a.nav-link a.config i.fa {
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+}
+.tabset .nav.nav-tabs li.nav-item:not(.active) a.nav-link a.config i.fa {
+    background: none;
+}
+.tabset .nav.nav-tabs li.nav-item:not(.active):focus a.nav-link a.config i.fa,
+.tabset .nav.nav-tabs li.nav-item:not(.active):hover a.nav-link a.config i.fa {
+    background-color: rgba(0, 0, 0, 0.25);
 }
 .tabset .tab-content {
     float: left;
@@ -83,6 +97,16 @@ section.home {
     min-height: 150px;
     padding: 5%;
     width: 100%;
+}
+.tabset .tab-content .tab-pane .link a.config {
+    position: absolute;
+    bottom: 52px;
+    right: 16px;
+}
+.tabset .tab-content .tab-pane .link a.config i.fa {
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px;
 }
 .tabset .tab-content .tab-pane .link:focus img,
 .tabset .tab-content .tab-pane .link:hover img {
