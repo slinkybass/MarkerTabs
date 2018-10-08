@@ -1,25 +1,29 @@
-<div class="row">
-    <uib-tabset class="tabset container">
-
-        <uib-tab ng-hide="homeCtrl.isHidden(tab.hidden)" ng-repeat="tab in mainCtrl.loggeduser.tabs | orderBy:'position'">
-            <uib-tab-heading>
-                <span ng-bind="tab.name"></span>
-            </uib-tab-heading>
-            <div ng-hide="homeCtrl.isHidden(link.hidden)" ng-repeat="link in tab.links | orderBy:'position'">
-                <a ng-href="{{link.url}}">
-                    <div class="link col-md-{{12/tab.cols}}">
-                        <img class="img-responsive" style="background-image:url('{{link.image}}'); background-color:{{link.bgcolor}}">
-                        <h4 class="text-center show" ng-bind="link.name"></h4>
+<section class="home">
+    <div class="container">
+        <div class="row">
+            <uib-tabset class="tabset container">
+                <uib-tab ng-hide="homeCtrl.isHidden(tab.hidden)" ng-repeat="tab in homeCtrl.loggeduser.tabs | orderBy:'position'">
+                    <uib-tab-heading>
+                        <span ng-bind="tab.name"></span>
+                    </uib-tab-heading>
+                    <div ng-hide="homeCtrl.isHidden(link.hidden)" ng-repeat="link in tab.links | orderBy:'position'">
+                        <a ng-href="{{link.url}}">
+                            <div class="link col-md-{{12/tab.cols}}">
+                                <img class="img-responsive" style="background-image:url('{{link.image}}'); background-color:{{link.bgcolor}}">
+                                <h4 class="text-center show" ng-bind="link.name"></h4>
+                            </div>
+                        </a>
                     </div>
-                </a>
-            </div>
-        </uib-tab>
+                </uib-tab>
 
-		<div class="container" ng-show="(mainCtrl.loggeduser.tabs).length == 0">
-			<h2 class="text-center">There are no tabs around here!</h2>
-		</div>
-    </uib-tabset>
-</div>
+        		<div class="container" ng-show="(homeCtrl.loggeduser.tabs).length == 0">
+        			<h2 class="text-center">There are no tabs around here!</h2>
+        		</div>
+            </uib-tabset>
+        </div>
+
+    </div>
+</section>
 
 <a class="pageslide-menu-selector" ng-click="homeCtrl.openedMenu = !homeCtrl.openedMenu">
     <i class="fa fa-bars"></i>

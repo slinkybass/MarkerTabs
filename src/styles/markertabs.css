@@ -1,32 +1,33 @@
-@import "http://fonts.googleapis.com/css?family=Roboto:300,400,700,900"; /* MAIN */
+@import "http://fonts.googleapis.com/css?family=Google Sans:300,400,700,900"; /* MAIN */
 html {
     height: 100%;
 }
 body {
     height: 100%;
-    font-family: 'Roboto', arial, sans-serif;
+    font-family: 'Google Sans', arial, sans-serif;
     color: #5B5B5B;
     background-color: #212121;
 }
-.main-content .page-content {
-    overflow: hidden;
-    position: relative;
-}
 /* LOGIN */
-.account {
+section.login {
     background-color: #2B2E33;
+    min-height: 100vh;
 }
-.account .account-wall {
+section.login .account-wall {
     margin-top: 100px;
     padding: 20px;
 }
-.account .account-wall .logo {
+section.login .account-wall .logo {
     background-image: url("logo.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
     min-height: 100px;
     margin: 10px;
+}
+/* HOME */
+section.home {
+    min-height: 100vh;
 }
 /* TABS */
 .tabset {
