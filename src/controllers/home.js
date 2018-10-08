@@ -19,17 +19,43 @@ angular.module('app')
                     };
 
                     vm.toggleHidden = function () {
-                        vm.showedHidden = !vm.showedHidden;
                         vm.openedMenu = false;
+                        if (!vm.showedHidden) {
+                            ngDialog.openConfirm({
+                                template: 'src/templates/verify.tmpl.html',
+                                className: 'ngdialog-theme-default'
+                            }).then(function (value) {
+                                if (value == '1234') {
+                                    vm.showedHidden = true;
+                                } else {
+                                    SweetAlert.swal("Error!", "Incorrect password", "error");
+                                }
+                            }, function (value) {});
+                        } else {
+                            vm.showedHidden = false;
+                        }
                     };
                     vm.toggleOptions = function () {
-                        vm.showedConfig = !vm.showedConfig;
                         vm.openedMenu = false;
+                        if (!vm.showedConfig) {
+                            ngDialog.openConfirm({
+                                template: 'src/templates/verify.tmpl.html',
+                                className: 'ngdialog-theme-default'
+                            }).then(function (value) {
+                                if (value == '1234') {
+                                    vm.showedConfig = true;
+                                } else {
+                                    SweetAlert.swal("Error!", "Incorrect password", "error");
+                                }
+                            }, function (value) {});
+                        } else {
+                            vm.showedConfig = false;
+                        }
                     };
                     vm.options_addLink = function () {
                         ngDialog.open({
                             template: 'src/templates/addLink.tmpl.html',
-                            className: 'ngdialog-theme-default ngdialog-xl',
+                            className: 'ngdialog-theme-default',
                             controller: 'AddLinkController',
                             controllerAs: 'addLinkCtrl'
                         });
@@ -37,7 +63,7 @@ angular.module('app')
                     vm.options_addTab = function () {
                         ngDialog.open({
                             template: 'src/templates/addTab.tmpl.html',
-                            className: 'ngdialog-theme-default ngdialog-xl',
+                            className: 'ngdialog-theme-default',
                             controller: 'AddTabController',
                             controllerAs: 'addTabCtrl'
                         });
@@ -45,7 +71,7 @@ angular.module('app')
                     vm.options_editLink = function (link) {
                         ngDialog.open({
                             template: 'src/templates/editLink.tmpl.html',
-                            className: 'ngdialog-theme-default ngdialog-xl',
+                            className: 'ngdialog-theme-default',
                             controller: 'EditLinkController',
                             controllerAs: 'editLinkCtrl',
                             resolve: {
@@ -58,7 +84,7 @@ angular.module('app')
                     vm.options_editTab = function (tab) {
                         ngDialog.open({
                             template: 'src/templates/editTab.tmpl.html',
-                            className: 'ngdialog-theme-default ngdialog-xl',
+                            className: 'ngdialog-theme-default',
                             controller: 'EditTabController',
                             controllerAs: 'editTabCtrl',
                             resolve: {
