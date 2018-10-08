@@ -29,6 +29,9 @@ angular.module('app')
             markertabsAPI.getUser = function (id) {
                 return markertabsAPI.api('/user/get/' + id);
             };
+            markertabsAPI.verify = function (postdata) {
+                return markertabsAPI.api('/user/verify', postdata, null, 'POST');
+            };
 
             return markertabsAPI;
         }

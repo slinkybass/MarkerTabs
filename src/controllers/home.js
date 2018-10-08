@@ -25,11 +25,13 @@ angular.module('app')
                                 template: 'src/templates/verify.tmpl.html',
                                 className: 'ngdialog-theme-default'
                             }).then(function (value) {
-                                if (value == '1234') {
+                                markertabsAPI.verify({
+                                    pass: value
+                                }).then(function (data) {
                                     vm.showedHidden = true;
-                                } else {
-                                    SweetAlert.swal("Error!", "Incorrect password", "error");
-                                }
+                                }).catch(function (data) {
+                                    SweetAlert.swal("Error!", getErrorAPI(data), "error");
+                                });
                             }, function (value) {});
                         } else {
                             vm.showedHidden = false;
@@ -42,11 +44,13 @@ angular.module('app')
                                 template: 'src/templates/verify.tmpl.html',
                                 className: 'ngdialog-theme-default'
                             }).then(function (value) {
-                                if (value == '1234') {
-                                    vm.showedConfig = true;
-                                } else {
-                                    SweetAlert.swal("Error!", "Incorrect password", "error");
-                                }
+                                markertabsAPI.verify({
+                                    pass: value
+                                }).then(function (data) {
+                                    vm.showedHidden = true;
+                                }).catch(function (data) {
+                                    SweetAlert.swal("Error!", getErrorAPI(data), "error");
+                                });
                             }, function (value) {});
                         } else {
                             vm.showedConfig = false;
@@ -128,6 +132,7 @@ angular.module('app')
 
                 }).catch(function (data) {
                     SweetAlert.swal("Error!", getErrorAPI(data), "error");
+                    $state.go('login');
                 });
             }
         }
