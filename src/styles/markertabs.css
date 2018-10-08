@@ -52,6 +52,10 @@ section.home {
 .tabset .nav.nav-tabs li.nav-item.disabled[disablecontent="true"] > a.nav-link:hover {
     cursor: pointer;
 }
+.tabset .nav.nav-tabs li.nav-item.disabled[disablecontent="true"]:focus a.nav-link,
+.tabset .nav.nav-tabs li.nav-item.disabled[disablecontent="true"]:hover a.nav-link {
+    color: rgb(255, 255, 255, 0.5);
+}
 .tabset .nav.nav-tabs li.nav-item a.nav-link a.config {
     position: absolute;
     top: 0;
