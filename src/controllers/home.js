@@ -47,7 +47,7 @@ angular.module('app')
                                 markertabsAPI.verify({
                                     pass: value
                                 }).then(function (data) {
-                                    vm.showedHidden = true;
+                                    vm.showedConfig = true;
                                 }).catch(function (data) {
                                     SweetAlert.swal("Error!", getErrorAPI(data), "error");
                                 });
