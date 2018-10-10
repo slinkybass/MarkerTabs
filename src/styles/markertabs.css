@@ -85,8 +85,8 @@ section.home {
     float: left;
     width: 100%;
 }
-.tabset .tab-content .tab-pane a {
-    cursor: pointer;
+.tabset .tab-content .tab-pane .link.sortable-chosen {
+    opacity: 0.5;
 }
 .tabset .tab-content .tab-pane .link {
     padding: 15px;
@@ -102,6 +102,13 @@ section.home {
     padding: 5%;
     width: 100%;
 }
+.tabset .tab-content .tab-pane .link:focus img,
+.tabset .tab-content .tab-pane .link:hover img {
+    border-color: #777777;
+}
+.tabset .tab-content .tab-pane .link a {
+    text-decoration: none;
+}
 .tabset .tab-content .tab-pane .link a.config {
     position: absolute;
     bottom: 52px;
@@ -111,10 +118,6 @@ section.home {
     color: white;
     background: rgba(0, 0, 0, 0.5);
     padding: 5px;
-}
-.tabset .tab-content .tab-pane .link:focus img,
-.tabset .tab-content .tab-pane .link:hover img {
-    border-color: #777777;
 }
 .tabset .tab-content .tab-pane .link h4 {
     color: #666666;

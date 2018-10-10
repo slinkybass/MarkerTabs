@@ -10,6 +10,7 @@
     "font-awesome": "^4.7.0",
     "ng-dialog": "^1.4.0",
     "oclazyload": "^1.1.0",
-    "satellizer": "^0.15.5"
+    "satellizer": "^0.15.5",
+    "sortablejs": "^1.7.0"
   }
 }

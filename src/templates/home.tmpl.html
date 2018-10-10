@@ -10,24 +10,27 @@
                             <i class="fa fa-gears"></i>
                         </a>
                     </uib-tab-heading>
-                    <div ng-hide="homeCtrl.isHidden(link.hidden)" ng-repeat="link in tab.links | orderBy:'position'">
-                        <a ng-href="{{link.url}}">
-                            <div class="link col-md-{{12/tab.cols}}">
-                                <img class="img-responsive" style="background-image:url('{{link.image}}'); background-color:{{link.bgcolor}}">
-                                <a class="config" ng-click="homeCtrl.options_editLink(link)" ng-show="homeCtrl.showedConfig">
-                                    <i class="fa fa-gears"></i>
-                                </a>
+
+                    <div id="links">
+                        <div id="link_{{link.id}}" class="link col-md-{{12/tab.cols}}" ng-hide="homeCtrl.isHidden(link.hidden)" ng-repeat="link in tab.links | orderBy:'position'">
+                            <a ng-href="{{link.url}}">
+                                <img class="img-responsive" style="background-image:url('{{link.image}}'); background-color:{{link.bgcolor}}" />
+                            </a>
+                            <a class="config" ng-click="homeCtrl.options_editLink(link)" ng-show="homeCtrl.showedConfig">
+                                <i class="fa fa-gears"></i>
+                            </a>
+                            <a ng-href="{{link.url}}">
                                 <h4 class="text-center show" ng-bind="link.name"></h4>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
                     </div>
 
                     <div ng-show="homeCtrl.showedConfig">
-                        <a ng-click="homeCtrl.options_addLink()">
-                            <div class="link col-md-{{12/tab.cols}}">
-                                <img class="img-responsive" style="background-image:url('src/styles/add.png');">
-                            </div>
-                        </a>
+                        <div class="link col-md-{{12/tab.cols}}">
+                            <a ng-click="homeCtrl.options_addLink()">
+                                <img class="img-responsive" style="background-image:url('src/styles/add.png');" />
+                            </a>
+                        </div>
                     </div>
                 </uib-tab>
 

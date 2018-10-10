@@ -66,6 +66,11 @@ satellizer@^0.15.5:
   resolved "https://registry.yarnpkg.com/satellizer/-/satellizer-0.15.5.tgz#43c93d2d361c4b6b6cf9d06d23b8881302b557a4"
   integrity sha1-Q8k9LTYcS2ts+dBtI7iIEwK1V6Q=
 
+sortablejs@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/sortablejs/-/sortablejs-1.7.0.tgz#80a2b2370abd568e1cec8c271131ef30a904fa28"
+  integrity sha1-gKKyNwq9Vo4c7IwnETHvMKkE+ig=
+
 sweetalert@^0.4.2:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/sweetalert/-/sweetalert-0.4.2.tgz#fc09ef88948d0f25e4f1232a22149f09e703753e"
