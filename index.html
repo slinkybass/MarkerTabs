@@ -12,6 +12,7 @@
     <link href="node_modules/bootstrap-extra/bootstrap-extra.min.css" rel="stylesheet" />
     <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <link href="node_modules/sweetalert/lib/sweet-alert.css" rel="stylesheet" />
+    <link href="node_modules/angularjs-toaster/toaster.min.css" rel="stylesheet" />
     <link href="node_modules/ng-dialog/css/ngDialog.min.css" rel="stylesheet" />
     <link href="node_modules/ng-dialog/css/ngDialog-theme-default.min.css" rel="stylesheet" />
 
@@ -20,6 +21,7 @@
 
 <body>
     <div ui-view></div>
+    <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
 
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
@@ -28,6 +30,7 @@
     <script src="node_modules/angular-pageslide-directive/dist/angular-pageslide-directive.min.js"></script>
     <script src="node_modules/sweetalert/lib/sweet-alert.min.js"></script>
     <script src="node_modules/angular-sweetalert/SweetAlert.min.js"></script>
+    <script src="node_modules/angularjs-toaster/toaster.min.js"></script>
     <script src="node_modules/ng-dialog/js/ngDialog.min.js"></script>
     <script src="node_modules/oclazyload/dist/ocLazyLoad.min.js"></script>
     <script src="node_modules/sortablejs/Sortable.min.js"></script>

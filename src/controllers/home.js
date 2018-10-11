@@ -1,7 +1,7 @@
 'use strict';
 angular.module('app')
-    .controller('HomeController', ['$state', '$auth', 'markertabsAPI', 'getErrorAPI', 'SweetAlert', 'ngDialog',
-        function ($state, $auth, markertabsAPI, getErrorAPI, SweetAlert, ngDialog) {
+    .controller('HomeController', ['$state', '$auth', 'markertabsAPI', 'getErrorAPI', 'SweetAlert', 'toaster', 'ngDialog',
+        function ($state, $auth, markertabsAPI, getErrorAPI, SweetAlert, toaster, ngDialog) {
             var vm = this;
 
             if (!$auth.getPayload()) {
@@ -48,12 +48,27 @@ angular.module('app')
                                     pass: value
                                 }).then(function (data) {
                                     vm.showedConfig = true;
+                                    vm.sort_links = Sortable.create(document.getElementById("links"), {
+                                        animation: 150,
+                                        onUpdate: function (evt) {
+                                            var id = evt.item.id.replace("link_", "");
+                                            var pos = evt.newIndex;
+                                            markertabsAPI.orderLink(id, {
+                                                position: pos
+                                            }).then(function (data) {
+                                                toaster.pop('success', 'Updated correctly!');
+                                            }).catch(function (data) {
+                                                SweetAlert.swal("Error!", getErrorAPI(data), "error");
+                                            });
+                                        }
+                                    });
                                 }).catch(function (data) {
                                     SweetAlert.swal("Error!", getErrorAPI(data), "error");
                                 });
                             }, function (value) {});
                         } else {
                             vm.showedConfig = false;
+                            vm.sort_links.destroy();
                         }
                     };
                     vm.options_addLink = function () {

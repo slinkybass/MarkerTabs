@@ -5,6 +5,7 @@
     "angular-sweetalert": "^1.1.2",
     "angular-ui-bootstrap": "^2.5.6",
     "angular-ui-router": "^1.0.20",
+    "angularjs-toaster": "^2.2.0",
     "bootstrap": "3.*",
     "bootstrap-extra": "https://github.com/slinkybass/bootstrap-extra",
     "font-awesome": "^4.7.0",

@@ -6,5 +6,6 @@ angular.module('app', [
     'pageslide-directive',
     'oc.lazyLoad',
     'oitozero.ngSweetAlert',
+    'toaster',
     'ngDialog'
 ]);
