@@ -48,7 +48,25 @@ angular.module('app')
                                     pass: value
                                 }).then(function (data) {
                                     vm.showedConfig = true;
-                                    vm.sort_links = Sortable.create(document.getElementById("links"), {
+                                    var tab_selector = document.getElementById("tabs").getElementsByClassName("nav")[0];
+                                    console.log(tab_selector);
+                                    vm.sort_tabs = Sortable.create(tab_selector, {
+                                        animation: 150,
+                                        onUpdate: function (evt) {
+                                            var id = evt.item.id.replace("tab_", "");
+                                            var pos = evt.newIndex;
+                                            markertabsAPI.orderTab(id, {
+                                                position: pos
+                                            }).then(function (data) {
+                                                toaster.pop('success', 'Updated correctly!');
+                                            }).catch(function (data) {
+                                                SweetAlert.swal("Error!", getErrorAPI(data), "error");
+                                            });
+                                        }
+                                    });
+                                    var link_selector = document.getElementById("links");
+                                    console.log(link_selector);
+                                    vm.sort_links = Sortable.create(link_selector, {
                                         animation: 150,
                                         onUpdate: function (evt) {
                                             var id = evt.item.id.replace("link_", "");
@@ -68,6 +86,7 @@ angular.module('app')
                             }, function (value) {});
                         } else {
                             vm.showedConfig = false;
+                            vm.sort_tabs.destroy();
                             vm.sort_links.destroy();
                         }
                     };

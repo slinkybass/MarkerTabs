@@ -3,36 +3,38 @@
         <div class="row">
             <uib-tabset active="1" class="tabset container">
 
-                <uib-tab index="$index + 1" ng-hide="homeCtrl.isHidden(tab.hidden)" ng-repeat="tab in homeCtrl.loggeduser.tabs | orderBy:'position'">
-                    <uib-tab-heading>
-                        <span ng-bind="tab.name"></span>
-                        <a class="config" ng-click="homeCtrl.options_editTab(tab)" ng-show="homeCtrl.showedConfig">
-                            <i class="fa fa-gears"></i>
-                        </a>
-                    </uib-tab-heading>
-
-                    <div id="links">
-                        <div id="link_{{link.id}}" class="link col-md-{{12/tab.cols}}" ng-hide="homeCtrl.isHidden(link.hidden)" ng-repeat="link in tab.links | orderBy:'position'">
-                            <a ng-href="{{link.url}}">
-                                <img class="img-responsive" style="background-image:url('{{link.image}}'); background-color:{{link.bgcolor}}" />
-                            </a>
-                            <a class="config" ng-click="homeCtrl.options_editLink(link)" ng-show="homeCtrl.showedConfig">
+                <div id="tabs">
+                    <uib-tab id="tab_{{tab.id}}" class="tab" index="$index + 1" ng-hide="homeCtrl.isHidden(tab.hidden)" ng-repeat="tab in homeCtrl.loggeduser.tabs | orderBy:'position'">
+                        <uib-tab-heading>
+                            <span ng-bind="tab.name"></span>
+                            <a class="config" ng-click="homeCtrl.options_editTab(tab)" ng-show="homeCtrl.showedConfig">
                                 <i class="fa fa-gears"></i>
                             </a>
-                            <a ng-href="{{link.url}}">
-                                <h4 class="text-center show" ng-bind="link.name"></h4>
-                            </a>
-                        </div>
-                    </div>
+                        </uib-tab-heading>
 
-                    <div ng-show="homeCtrl.showedConfig">
-                        <div class="link col-md-{{12/tab.cols}}">
-                            <a ng-click="homeCtrl.options_addLink()">
-                                <img class="img-responsive" style="background-image:url('src/styles/add.png');" />
-                            </a>
+                        <div id="links">
+                            <div id="link_{{link.id}}" class="link col-md-{{12/tab.cols}}" ng-hide="homeCtrl.isHidden(link.hidden)" ng-repeat="link in tab.links | orderBy:'position'">
+                                <a ng-href="{{link.url}}">
+                                    <img class="img-responsive" style="background-image:url('{{link.image}}'); background-color:{{link.bgcolor}}" />
+                                </a>
+                                <a class="config" ng-click="homeCtrl.options_editLink(link)" ng-show="homeCtrl.showedConfig">
+                                    <i class="fa fa-gears"></i>
+                                </a>
+                                <a ng-href="{{link.url}}">
+                                    <h4 class="text-center show" ng-bind="link.name"></h4>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                </uib-tab>
+
+                        <div ng-show="homeCtrl.showedConfig">
+                            <div class="link col-md-{{12/tab.cols}}">
+                                <a ng-click="homeCtrl.options_addLink()">
+                                    <img class="img-responsive" style="background-image:url('src/styles/add.png');" />
+                                </a>
+                            </div>
+                        </div>
+                    </uib-tab>
+                </div>
 
                 <uib-tab ng-show="homeCtrl.showedConfig" ng-click="homeCtrl.options_addTab()" disable="true" disablecontent="true">
                     <uib-tab-heading>

@@ -32,6 +32,9 @@ angular.module('app')
             markertabsAPI.verify = function (postdata) {
                 return markertabsAPI.api('/user/verify', postdata, null, 'POST');
             };
+            markertabsAPI.orderTab = function (id, postdata) {
+                return markertabsAPI.api('/tab/order/' + id, postdata, null, 'POST');
+            };
             markertabsAPI.orderLink = function (id, postdata) {
                 return markertabsAPI.api('/link/order/' + id, postdata, null, 'POST');
             };
