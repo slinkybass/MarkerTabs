@@ -7,6 +7,11 @@
   resolved "https://registry.yarnpkg.com/@uirouter/core/-/core-5.0.21.tgz#b6c4c311e9416a1e8ce76b072e042a60224d1b3a"
   integrity sha512-QWHc0wT00qtYNkT0BXZaFNLLHZyux0qJjF8c2WklW5/Q0Z866NoJjJErEMWjQb/AR+olkR2NlfEEi8KTQU2OpA==
 
+angular-animate@^1.7.5:
+  version "1.7.5"
+  resolved "https://registry.yarnpkg.com/angular-animate/-/angular-animate-1.7.5.tgz#1ffc6c2a9cdee227a2ba79cc6cd8f71ec44db5dc"
+  integrity sha512-kU/fHIGf2a4a3bH7E1tzALTHk+QfoUSCK9fEcMFisd6ZWvNDwPzXWAilItqOC3EDiAXPmGHaNc9/aXiD9xrAxQ==
+
 angular-pageslide-directive@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/angular-pageslide-directive/-/angular-pageslide-directive-2.2.0.tgz#e78a46240d41e2227a6e196ccd9ff29fb45b677e"
