@@ -143,7 +143,7 @@ section.home {
 .tabset .tab-content .tab-pane .link {
     padding: 15px;
 }
-.tabset .tab-content .tab-pane .link img {
+.tabset .tab-content .tab-pane .link .img {
     background-origin: content-box;
     background-position: center center;
     background-repeat: no-repeat;
@@ -154,8 +154,8 @@ section.home {
     padding: 5%;
     width: 100%;
 }
-.tabset .tab-content .tab-pane .link:focus img,
-.tabset .tab-content .tab-pane .link:hover img {
+.tabset .tab-content .tab-pane .link:focus .img,
+.tabset .tab-content .tab-pane .link:hover .img {
     border-color: #777777;
 }
 .tabset .tab-content .tab-pane .link a {

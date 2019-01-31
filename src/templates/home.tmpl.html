@@ -15,7 +15,7 @@
                         <div id="links">
                             <div id="link_{{link.id}}" class="link col-md-{{12/tab.cols}}" ng-hide="homeCtrl.isHidden(link.hidden)" ng-repeat="link in tab.links | orderBy:'position'">
                                 <a ng-href="{{link.url}}">
-                                    <img class="img-responsive" style="background-image:url('{{link.image}}'); background-color:{{link.bgcolor}}" />
+                                    <div class="img" style="background-image:url('{{link.image}}'); background-color:{{link.bgcolor}}" />
                                 </a>
                                 <a class="config" ng-click="homeCtrl.options_editLink(link)" ng-show="homeCtrl.showedConfig">
                                     <i class="fa fa-gears"></i>
